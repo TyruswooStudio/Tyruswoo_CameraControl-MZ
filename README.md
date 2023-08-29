@@ -73,7 +73,8 @@ is useful for basic cutscene content. However, there are some drawbacks.
   camera's view is moving.
 
 ### For more help using the Camera Control plugin, see [Tyruswoo.com](https://www.tyruswoo.com).
-Version History
+
+## Version History
 
 **v1.0**  9/12/2020
 - Camera Control released for RPG Maker MZ!
