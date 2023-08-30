@@ -36,7 +36,7 @@ Tyruswoo.CameraControl = Tyruswoo.CameraControl || {};
 
 /*:
  * @target MZ
- * @plugindesc MZ v1.1 Provides greater control of the camera!
+ * @plugindesc MZ v1.1.1 Provides greater control of the camera!
  * @author Tyruswoo
  * @url https://www.tyruswoo.com
  *
@@ -117,6 +117,9 @@ Tyruswoo.CameraControl = Tyruswoo.CameraControl || {};
  *          Tyruswoo_TileControl plugin. Now, orientational shift is
  *          calculated by the Camera Control plugin without needing
  *          Tyruswoo_TileControl.
+ * 
+ * v1.1.1  8/30/2023
+ *        - This plugin is now free and open source under the MIT license.
  * ============================================================================
  * MIT License
  *
