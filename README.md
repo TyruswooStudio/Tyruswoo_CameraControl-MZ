@@ -72,7 +72,7 @@ is useful for basic cutscene content. However, there are some drawbacks.
   autoscrolling, in which the player is intended to be mobile while the
   camera's view is moving.
 
-### For more help using the Camera Control plugin, see [Tyruswoo.com](https://www.tyruswoo.com).
+### Visit [**Tyruswoo.com**](https://www.tyruswoo.com) to [ask for help](https://www.tyruswoo.com/contact-us/), [donate](https://www.tyruswoo.com/donate/), or browse more of our [plugins](https://www.tyruswoo.com/downloads/rpg-maker-plugin-downloads/).
 
 ## Version History
 
