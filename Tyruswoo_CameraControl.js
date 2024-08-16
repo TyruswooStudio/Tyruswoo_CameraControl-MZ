@@ -105,7 +105,7 @@ Tyruswoo.CameraControl = Tyruswoo.CameraControl || {};
  *    autoscrolling, in which the player is intended to be mobile while the
  *    camera's view is moving.
  * ============================================================================
- * For more help using the Camera Control plugin, see Tyruswoo.com.
+ * Visit Tyruswoo.com to ask for help, donate, or browse more of our plugins.
  * ============================================================================
  * Version History:
  *
