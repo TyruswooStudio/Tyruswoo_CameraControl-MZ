@@ -519,25 +519,39 @@ Tyruswoo.CameraControl = Tyruswoo.CameraControl || {};
 	// Alias method
 	Tyruswoo.CameraControl.Game_Player_updateScroll = Game_Player.prototype.updateScroll;
 	Game_Player.prototype.updateScroll = function(lastScrolledX, lastScrolledY) {
-		if($gameMap._camFollow == "player") {
-			if(Imported.Tyruswoo_FollowerControl && Tyruswoo.FollowerControl.follower() != $gamePlayer) { //If Tyruswoo_FollowerControl is installed, then the currently selected follower is automatically selected.
-				const w = (Imported.Tyruswoo_FollowerControl && Tyruswoo.FollowerControl.follower()) ? Tyruswoo.FollowerControl.follower() : $gamePlayer;
+		if (!$gameMap._camFollow) {
+			// This is a saved game with no _camFollow declared.
+			// Use default updateScroll method.
+			Tyruswoo.CameraControl.Game_Player_updateScroll.call(
+				this, lastScrolledX, lastScrolledY);
+		} else if($gameMap._camFollow == "player") {
+			if (Imported.Tyruswoo_FollowerControl && Tyruswoo.FollowerControl.follower() != $gamePlayer) {
+				// If Tyruswoo_FollowerControl is installed, center its selected follower.
+				const w = (Imported.Tyruswoo_FollowerControl && Tyruswoo.FollowerControl.follower()) ?
+					Tyruswoo.FollowerControl.follower() : $gamePlayer;
 				$gamePlayer.center(w._realX, w._realY);
 			} else {
-				Tyruswoo.CameraControl.Game_Player_updateScroll.call(this, lastScrolledX, lastScrolledY); //Default updateScroll method.
+				// Use the default updateScroll method.
+				Tyruswoo.CameraControl.Game_Player_updateScroll.call(
+					this, lastScrolledX, lastScrolledY);
 			};
-		} else if($gameMap._camFollow.substr(0, 8) == "follower") {
-			const n = Number($gameMap._camFollow.substr(9)); //Get the number at the end of this string.
+		} else if ($gameMap._camFollow.substr(0, 8) == "follower") {
+			// Get the number at the end of this string.
+			const n = Number($gameMap._camFollow.substr(9));
 			const w = $gamePlayer.followers().follower(n - 1);
-			$gamePlayer.center(w._realX, w._realY); //Make sure the camera stays centered, regardless of watched character's position.
-		} else if($gameMap._camFollow == "event") {
+			// Make sure the camera stays centered, regardless of watched character's position.
+			$gamePlayer.center(w._realX, w._realY);
+		} else if ($gameMap._camFollow == "event") {
 			const eventID = $gameMap._camFollowEventID;
 			const e = $gameMap._events[eventID];
 			if (eventID > 0 && typeof e != "undefined") {
-				$gamePlayer.center(e._realX, e._realY); // Make sure the camera stays centered on this event, regardless of its position.
+				// Keep the camera centered on this event, regardless of its position.
+				$gamePlayer.center(e._realX, e._realY);
 			};
-		} else if($gameMap._camFollow != "map") { //In all other cases, excluding "map".
-			Tyruswoo.CameraControl.Game_Player_updateScroll.call(this, lastScrolledX, lastScrolledY); //Default updateScroll method.
+		} else if ($gameMap._camFollow != "map") {
+			// In all other cases except "map", use default updateScroll method.
+			Tyruswoo.CameraControl.Game_Player_updateScroll.call(
+				this, lastScrolledX, lastScrolledY);
 		};
 	};
 
