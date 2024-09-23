@@ -88,6 +88,9 @@ is useful for basic cutscene content. However, there are some drawbacks.
 **v1.1.1** - 8/30/2023
 - This plugin is now free and open source under the [MIT license](https://opensource.org/license/mit/).
 
+**v1.1.2** - 9/23/2024
+- Fixed a crash affecting saves that were made before Camera Control was installed and turned ON.
+
 > **Remember, only you can build your dreams!**
 > 
 > *Tyruswoo*

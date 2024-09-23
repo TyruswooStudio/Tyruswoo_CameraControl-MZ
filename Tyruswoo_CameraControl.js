@@ -36,7 +36,7 @@ Tyruswoo.CameraControl = Tyruswoo.CameraControl || {};
 
 /*:
  * @target MZ
- * @plugindesc MZ v1.1.1 Provides greater control of the camera!
+ * @plugindesc MZ v1.1.2 Provides greater control of the camera!
  * @author Tyruswoo
  * @url https://www.tyruswoo.com
  *
@@ -120,6 +120,10 @@ Tyruswoo.CameraControl = Tyruswoo.CameraControl || {};
  * 
  * v1.1.1  8/30/2023
  *        - This plugin is now free and open source under the MIT license.
+ * 
+ * v1.1.2  9/23/2024
+ *        - Fixed a crash affecting saves that were made before Camera Control
+ *          was installed and turned ON.
  * ============================================================================
  * MIT License
  *
